@@ -39,3 +39,92 @@
     </footer>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tabs Example</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Additional inline styles for dark grey background and red font */
+        body {
+            background-color: #333;
+            color: red;
+            font-family: Arial, sans-serif;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #555;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab:hover {
+            background-color: #777;
+        }
+        .tab.active {
+            background-color: #fff;
+            color: black;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #555;
+            border-radius: 0 5px 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <div class="tab active" onclick="toggleTab('tab1')">Tab 1</div>
+        <div class="tab" onclick="toggleTab('tab2')">Tab 2</div>
+        <div class="tab" onclick="toggleTab('tab3')">Tab 3</div>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <h2>Tab 1 Content</h2>
+        <p>This is the content of Tab 1.</p>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>Tab 2 Content</h2>
+        <p>This is the content of Tab 2.</p>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h2>Tab 3 Content</h2>
+        <p>This is the content of Tab 3.</p>
+    </div>
+
+    <script>
+        function toggleTab(tabId) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Deactivate all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Activate the selected tab
+            document.getElementById(tabId).classList.add("active");
+            document.querySelector('[onclick="toggleTab(\'' + tabId + '\')"]').classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
