@@ -33,7 +33,7 @@
             margin-bottom: 10px;
         }
         .textbox {
-            background-color: #00D3F7; /* Fixed typo: Removed extra # */
+            background-color: #00D3F7;
             color: white;
             padding: 10px;
             border-radius: 5px;
@@ -53,12 +53,13 @@
             width: 169px; 
             height: 300px; 
             border-radius: 10px; 
-            margin-bottom: 10px; /* Adjusted margin to create space */
+            margin-right: 20px; 
+            margin-bottom: 10px;
         }
         .profile-section {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
+            align-items: center;
+            justify-content: space-between;
             width: 80%; /* Adjust width of profile section */
             max-width: 800px; /* Maximum width of profile section */
             margin-bottom: 20px; /* Space below profile section */
@@ -66,6 +67,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Resume Title -->
+    <div class="resume-title">
+        <h1>Connor Gorny's Resume</h1>
+    </div>
 
     <div class="profile-section">
         <!-- Profile Image -->
@@ -75,11 +81,6 @@
         <div class="pdf-link">
             <a href="https://apricot-inna-64.tiiny.site" target="_blank">Download Resume PDF</a>
         </div>
-    </div>
-
-    <!-- Resume Title -->
-    <div class="resume-title">
-        <h1>Connor Gorny's Resume</h1>
     </div>
 
     <!-- Resume Content -->
@@ -96,7 +97,7 @@
             <h2>Experience</h2>
             <div class="textbox">
                 <p>Software Engineer Intern, Just Kidding I Never Interned Anywhere (2022 - 2023)</p>
-                <p>"Developed" web applications using "JavaScript" and "Python"</p>
+                <p>"Developed" web "applications" using "JavaScript" and "Python"</p>
             </div>
         </div>
 
