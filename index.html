@@ -3,82 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Tabs Example</title>
+    <title>Three Headers Example</title>
     <style>
         body {
             background-color: #333;
             color: red;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-        }
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            background-color: #555;
-            padding: 10px 0;
-        }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px 5px 0 0;
-        }
-        .tab.active {
-            background-color: #777;
-        }
-        .tab-content {
-            display: none;
             padding: 20px;
-            background-color: #555;
-            border-radius: 0 5px 5px 5px;
         }
-        .tab-content.active {
-            display: block;
+        .header {
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .textbox {
+            background-color: #555;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
         }
     </style>
 </head>
 <body>
 
-    <div class="tabs">
-        <div class="tab active" onclick="toggleTab('tab1')">Tab 1</div>
-        <div class="tab" onclick="toggleTab('tab2')">Tab 2</div>
-        <div class="tab" onclick="toggleTab('tab3')">Tab 3</div>
+    <div class="header">
+        <h2>Header 1</h2>
+        <div class="textbox">
+            <p>Text box content for Header 1 goes here.</p>
+        </div>
     </div>
 
-    <div id="tab1" class="tab-content active">
-        <h2>Tab 1 Content</h2>
-        <p>This is the content of Tab 1.</p>
+    <div class="header">
+        <h2>Header 2</h2>
+        <div class="textbox">
+            <p>Text box content for Header 2 goes here.</p>
+        </div>
     </div>
 
-    <div id="tab2" class="tab-content">
-        <h2>Tab 2 Content</h2>
-        <p>This is the content of Tab 2.</p>
+    <div class="header">
+        <h2>Header 3</h2>
+        <div class="textbox">
+            <p>Text box content for Header 3 goes here.</p>
+        </div>
     </div>
-
-    <div id="tab3" class="tab-content">
-        <h2>Tab 3 Content</h2>
-        <p>This is the content of Tab 3.</p>
-    </div>
-
-    <script>
-        function toggleTab(tabId) {
-            // Hide all tab contents
-            var tabContents = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
-
-            // Deactivate all tabs
-            var tabs = document.getElementsByClassName("tab");
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove("active");
-            }
-
-            // Activate the selected tab
-            document.getElementById(tabId).classList.add("active");
-            document.querySelector('[onclick="toggleTab(\'' + tabId + '\')"]').classList.add("active");
-        }
-    </script>
 
 </body>
 </html>
